@@ -3,21 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>pcopy</string>
+	<string>dPrint</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property(nonatomic, copy) &lt;#NSObject#&gt; *&lt;#NSObject#&gt;;</string>
+	<string>deinit {
+        dmPrint("\(self)--&gt;\(#function)")
+    }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>1EBD62F3-C913-482E-BCC4-5AF975C43DD2</string>
+	<string>B9FCBA24-0578-4C85-A870-187CEBF81D0A</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>My Code Snippet_copy</string>
+	<string>My Code Snippet_dPrint</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

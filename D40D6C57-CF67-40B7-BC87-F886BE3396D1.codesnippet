@@ -3,21 +3,32 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>pcopy</string>
+	<string>model</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property(nonatomic, copy) &lt;#NSObject#&gt; *&lt;#NSObject#&gt;;</string>
+	<string>import ObjectMapper
+
+final class &lt;#Model#&gt;: NSObject, Mappable {
+    
+    
+    required init?(map: Map) { }
+    
+    func mapping(map: Map) {
+        
+        
+    }
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>1EBD62F3-C913-482E-BCC4-5AF975C43DD2</string>
+	<string>D40D6C57-CF67-40B7-BC87-F886BE3396D1</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>My Code Snippet_copy</string>
+	<string>My Code Snippet_model</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

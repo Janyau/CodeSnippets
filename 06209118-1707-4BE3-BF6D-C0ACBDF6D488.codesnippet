@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>req_list</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)loadCacheData
+{
+    isLoadCache = YES;
+    NSString *key = [NSString stringWithFormat:@"%@_%d",[NSDeviceInfo getEngine].hrUser.companyid, &lt;#type#&gt;];
+    NSDictionary *dic = [NSCacheDB getResultDicByKey:key];
+    if (dic &amp;&amp; [dic isKindOfClass:[NSDictionary class]]) {
+        NSJBase* jBase = [[NSJBase alloc] initWithDictionary:dic];
+        [self dataCallback:jBase];
+    }
+}
+
+- (void)refresh:(id)sender
+{
+    isLoadCache = NO;
+    NSMsgSend *obj = [[NSMsgSend alloc] initWithType:GET_REQUEST taskType:&lt;#type#&gt; sender:self action:@selector(dataCallback:)];
+    [obj.data setObject:&lt;#value#&gt; forKey:&lt;#key#&gt;];
+    [obj.data setObject:@"1" forKey:@"p"];
+    [obj.data setObject:@"20" forKey:@"limit"];
+    obj.needCacheData = YES;
+    obj.saveDBKey = [NSString stringWithFormat:@"%@_%d",[NSDeviceInfo getEngine].hrUser.companyid, &lt;#type#&gt;];
+    obj.needRequestPrompt = [super shouldNeedRequestPrompt];
+    [NSObject postNotificationObject:NOTI_GLOBE_REQUEST msg:obj];
+}
+
+- (void)loadMoreData
+{
+    if (curPageNo+1 &gt; dataInfo.totalPage) {
+        if (!dataInfo || [dataInfo.statuses count] == 0)
+        {
+            [super doneMoreLocalTableView];
+            return;
+        }
+        if (_moreing) {
+            [MBProgressHUD showPrompt:@"没有更多新内容啦，请稍后再来看!"];
+        }
+        [super doneMoreLocalTableView];
+        return;
+    }
+    NSMsgSend *obj = [[NSMsgSend alloc] initWithType:GET_REQUEST taskType:&lt;#type#&gt; sender:self action:@selector(dataMoreCallBack:)];
+    [obj.data setObject:[NSString stringWithFormat:@"%ld",curPageNo+1] forKey:@"p"];
+    [obj.data setObject:@"20" forKey:@"limit"];
+    obj.needRequestPrompt = YES;
+    [NSObject postNotificationObject:NOTI_GLOBE_REQUEST msg:obj];
+}
+
+- (void)dataCallback:(NSJBase*)jBase
+{
+    isInRefresh = YES;
+    if (jBase.result) {
+        if (jBase.dataDctionary &amp;&amp; [jBase.dataDctionary isKindOfClass:[NSDictionary class]]) {
+            
+        }
+        [[self getCurTableView] reloadData];
+    }
+    else
+    {
+        [MBProgressHUD showPrompt:jBase.msg];
+    }
+    [super endRefreshAction:isLoadCache];
+}
+
+-(void)dataMoreCallBack:(NSJBase*)jBase
+{
+    [super doneLoadingAllTableViewData];
+    if (jBase.result) {
+        NSStatusesInfo* info = [[NSStatusesInfo alloc] initWithDictionary:jBase.dataDctionary classData:[&lt;#item#&gt; class]];
+        if ([info.statuses count]) {
+            [dataInfo.statuses addObjectsFromArray:info.statuses];
+            dataInfo.sincetime = info.sincetime;
+            curPageNo++;
+            [[self getCurTableView] reloadData];
+        }
+        else {
+            [super doneMoreLocalTableView];
+        }
+    }
+    else
+    {
+        [super doneMoreLocalTableView];
+        [MBProgressHUD showPrompt:jBase.msg];
+    }
+    [super refreshMoreView];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>06209118-1707-4BE3-BF6D-C0ACBDF6D488</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>My Code Snippet_request_list</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

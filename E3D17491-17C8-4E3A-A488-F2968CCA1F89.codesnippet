@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>req_data</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)refresh:(id)sender
+{
+    NSMsgSend *obj = [[NSMsgSend alloc] initWithType:&lt;#GET_REQUEST#&gt; taskType:&lt;#MSG#&gt; sender:self action:@selector(dataCallback:)];
+    [obj.data setObject:&lt;#value#&gt; forKey:&lt;#key#&gt;];
+    obj.needCacheData = &lt;#YES#&gt;;
+    obj.needRequestPrompt = &lt;#YES#&gt;;
+    [NSObject postNotificationObject:NOTI_GLOBE_REQUEST msg:obj];
+}
+
+- (void)dataCallback:(NSJBase*)jBase
+{
+    if (jBase.result) {
+        if (jBase.dataDctionary &amp;&amp; [jBase.dataDctionary isKindOfClass:[&lt;#NSDictionary#&gt; class]]) {
+            
+        }
+    }
+    else
+    {
+        [MBProgressHUD showPrompt:jBase.msg];
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E3D17491-17C8-4E3A-A488-F2968CCA1F89</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>My Code Snippet_req_data</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
