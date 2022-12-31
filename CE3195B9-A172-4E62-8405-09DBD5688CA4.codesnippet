@@ -3,23 +3,34 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>quickDebug</string>
+	<string>quickTextView</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    #if DEBUG
-    
-    #endif</string>
+	<string>let textView = UITextView()
+view.addSubview(textView)
+textView.font = UIFont.systemFont(ofSize: &lt;#font#&gt;)
+textView.textColor = UIColor(hexString: &lt;#textColor#&gt;)
+textView.backgroundColor = UIColor(hexString: &lt;#backgroundColor#&gt;)
+
+textView.layer.cornerRadius = &lt;#cornerRadius#&gt;
+textView.layer.masksToBounds = true
+
+textView.snp.makeConstraints { make in
+    make.top.equalToSuperview
+    make.leading.trailing.equalToSuperview()
+    make.height.equalTo(&lt;#height#&gt;)
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>D755B9CA-AD7C-4D1C-9E1E-9489C95E4DA3</string>
+	<string>CE3195B9-A172-4E62-8405-09DBD5688CA4</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>My Code Snippet_debugSwift</string>
+	<string>My Code Snippet_quickTextView</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

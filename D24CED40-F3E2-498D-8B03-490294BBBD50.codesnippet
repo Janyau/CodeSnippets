@@ -3,23 +3,36 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>quickDebug</string>
+	<string>quickButton</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    #if DEBUG
-    
-    #endif</string>
+	<string>let btn = UIButton()
+view.addSubview(btn)
+btn.setImage(UIImage(named: &lt;#name#&gt;), for: .normal)
+
+btn.setTitleColor(UIColor(hexString: &lt;#titleColor#&gt;), for: .normal)
+btn.setTitle(&lt;#title#&gt;, for: .normal)
+
+btn.addTarget(self, action: #selector(fm_Click), for: .touchUpInside)
+btn.snp.makeConstraints { make in
+    make.width.height.equalTo(&lt;#height#&gt;)
+    make.top.centerX.equalToSuperview()
+}
+
+@objc func fm_Click() {
+   
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>D755B9CA-AD7C-4D1C-9E1E-9489C95E4DA3</string>
+	<string>D24CED40-F3E2-498D-8B03-490294BBBD50</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>My Code Snippet_debugSwift</string>
+	<string>My Code Snippet_quickButton</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

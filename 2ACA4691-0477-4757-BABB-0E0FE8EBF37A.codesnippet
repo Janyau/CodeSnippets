@@ -3,23 +3,32 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>quickDebug</string>
+	<string>quickLabel</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    #if DEBUG
-    
-    #endif</string>
+	<string>let label = UILabel()
+label.textColor = UIColor(hexString: &lt;#color#&gt;)
+label.font = UIFont.systemFont(ofSize: &lt;#font#&gt;, weight: &lt;#weight#&gt;)
+label.textAlignment = .center
+label.backgroundColor = UIColor(hexString: &lt;#color#&gt;)
+
+label.layer.cornerRadius = &lt;#cornerRadius#&gt;
+label.layer.borderWidth = &lt;#borderWidth#&gt;
+label.layer.borderColor = UIColor(hexString: &lt;#borderColor#&gt;).cgColor
+label.layer.masksToBounds = true
+bkBtnView.addSubview(label)
+</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>D755B9CA-AD7C-4D1C-9E1E-9489C95E4DA3</string>
+	<string>2ACA4691-0477-4757-BABB-0E0FE8EBF37A</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>My Code Snippet_debugSwift</string>
+	<string>My Code Snippet_quickLabel</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

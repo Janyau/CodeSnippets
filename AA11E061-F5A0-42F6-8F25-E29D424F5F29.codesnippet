@@ -3,23 +3,31 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>quickDebug</string>
+	<string>quickObjectMapper</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    #if DEBUG
+	<string>import ObjectMapper
+
+struct &lt;#DrBBottleItem#&gt;: Mappable {
     
-    #endif</string>
+    public init?(map: Map) {}
+    
+    mutating public func mapping(map: Map) {
+        
+    }
+}
+</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>D755B9CA-AD7C-4D1C-9E1E-9489C95E4DA3</string>
+	<string>AA11E061-F5A0-42F6-8F25-E29D424F5F29</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>My Code Snippet_debugSwift</string>
+	<string>My Code Snippet_quickObjectMapper</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

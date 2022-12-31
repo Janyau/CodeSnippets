@@ -3,23 +3,27 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>quickDebug</string>
+	<string>quickStackView</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    #if DEBUG
-    
-    #endif</string>
+	<string>let stackView = UIStackView()
+stackView.spacing = &lt;#spacing#&gt;
+view.addSubview(stackView)
+stackView.snp.makeConstraints { make in
+    make.leading.trailing.equalToSuperview()
+    make.center.equalToSuperview()
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>D755B9CA-AD7C-4D1C-9E1E-9489C95E4DA3</string>
+	<string>AD69CBB4-517D-4582-A166-196BDDD2C890</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>My Code Snippet_debugSwift</string>
+	<string>My Code Snippet_quickStackView</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
